@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547157A19D65142000C3E0F /* AppDelegate.swift */; };
-		E547157E19D65143000C3E0F /* WellySwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E547157C19D65143000C3E0F /* WellySwift.xcdatamodeld */; };
 		E547158019D65143000C3E0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547157F19D65143000C3E0F /* ViewController.swift */; };
 		E547158319D65143000C3E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E547158119D65143000C3E0F /* Main.storyboard */; };
 		E547158519D65143000C3E0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E547158419D65143000C3E0F /* Images.xcassets */; };
@@ -29,7 +28,6 @@
 		E547157519D65142000C3E0F /* WellySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E547157919D65142000C3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E547157A19D65142000C3E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E547157D19D65143000C3E0F /* WellySwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WellySwift.xcdatamodel; sourceTree = "<group>"; };
 		E547157F19D65143000C3E0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E547158219D65143000C3E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E547158419D65143000C3E0F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				E547157F19D65143000C3E0F /* ViewController.swift */,
 				E547158119D65143000C3E0F /* Main.storyboard */,
 				E547158419D65143000C3E0F /* Images.xcassets */,
-				E547157C19D65143000C3E0F /* WellySwift.xcdatamodeld */,
 				E547157819D65142000C3E0F /* Supporting Files */,
 			);
 			path = WellySwift;
@@ -213,7 +210,6 @@
 			files = (
 				E547158019D65143000C3E0F /* ViewController.swift in Sources */,
 				E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */,
-				E547157E19D65143000C3E0F /* WellySwift.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,19 +405,6 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E547157C19D65143000C3E0F /* WellySwift.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E547157D19D65143000C3E0F /* WellySwift.xcdatamodel */,
-			);
-			currentVersion = E547157D19D65143000C3E0F /* WellySwift.xcdatamodel */;
-			path = WellySwift.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E547156D19D65142000C3E0F /* Project object */;
 }
