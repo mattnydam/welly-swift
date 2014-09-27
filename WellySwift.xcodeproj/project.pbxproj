@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547157A19D65142000C3E0F /* AppDelegate.swift */; };
-		E547158019D65143000C3E0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547157F19D65143000C3E0F /* ViewController.swift */; };
 		E547158319D65143000C3E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E547158119D65143000C3E0F /* Main.storyboard */; };
 		E547158519D65143000C3E0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E547158419D65143000C3E0F /* Images.xcassets */; };
 		E547159119D65143000C3E0F /* WellySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159019D65143000C3E0F /* WellySwiftTests.swift */; };
+		E547159D19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159C19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +28,12 @@
 		E547157519D65142000C3E0F /* WellySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E547157919D65142000C3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E547157A19D65142000C3E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E547157F19D65143000C3E0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E547158219D65143000C3E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E547158419D65143000C3E0F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E547158A19D65143000C3E0F /* WellySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WellySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E547158F19D65143000C3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E547159019D65143000C3E0F /* WellySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellySwiftTests.swift; sourceTree = "<group>"; };
+		E547159C19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSWPennyOverviewTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +75,8 @@
 		E547157719D65142000C3E0F /* WellySwift */ = {
 			isa = PBXGroup;
 			children = (
+				E547159A19D65655000C3E0F /* View Controllers */,
 				E547157A19D65142000C3E0F /* AppDelegate.swift */,
-				E547157F19D65143000C3E0F /* ViewController.swift */,
 				E547158119D65143000C3E0F /* Main.storyboard */,
 				E547158419D65143000C3E0F /* Images.xcassets */,
 				E547157819D65142000C3E0F /* Supporting Files */,
@@ -107,6 +107,14 @@
 				E547158F19D65143000C3E0F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E547159A19D65655000C3E0F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E547159C19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E547158019D65143000C3E0F /* ViewController.swift in Sources */,
 				E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */,
+				E547159D19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
