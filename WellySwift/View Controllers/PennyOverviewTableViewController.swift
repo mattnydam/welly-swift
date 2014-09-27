@@ -8,13 +8,13 @@
 
 import UIKit
 
-let cellIdentifier:String = "WSWPennyOverviewCell"
+let cellIdentifier:String = "PennyOverviewCell"
 
-class WSWPennyOverviewTableViewController: UITableViewController {
-
+class PennyOverviewTableViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         print("Loaded")
     }
     
@@ -26,14 +26,14 @@ class WSWPennyOverviewTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
 
-        return 500;
+        return 10;
     }
 
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
-
-        cell.textLabel.text = "Hello world";
+        
+        cell.selectionStyle = .None
         
         return cell
     }

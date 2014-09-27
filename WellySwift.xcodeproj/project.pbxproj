@@ -11,7 +11,8 @@
 		E547158319D65143000C3E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E547158119D65143000C3E0F /* Main.storyboard */; };
 		E547158519D65143000C3E0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E547158419D65143000C3E0F /* Images.xcassets */; };
 		E547159119D65143000C3E0F /* WellySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159019D65143000C3E0F /* WellySwiftTests.swift */; };
-		E547159D19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159C19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift */; };
+		E547159D19D656CD000C3E0F /* PennyOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159C19D656CD000C3E0F /* PennyOverviewTableViewController.swift */; };
+		E54715A119D663AA000C3E0F /* PennyOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A019D663AA000C3E0F /* PennyOverviewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +34,8 @@
 		E547158A19D65143000C3E0F /* WellySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WellySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E547158F19D65143000C3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E547159019D65143000C3E0F /* WellySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellySwiftTests.swift; sourceTree = "<group>"; };
-		E547159C19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSWPennyOverviewTableViewController.swift; sourceTree = "<group>"; };
+		E547159C19D656CD000C3E0F /* PennyOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PennyOverviewTableViewController.swift; sourceTree = "<group>"; };
+		E54715A019D663AA000C3E0F /* PennyOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PennyOverviewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,8 @@
 		E547157719D65142000C3E0F /* WellySwift */ = {
 			isa = PBXGroup;
 			children = (
+				E54715A219D66637000C3E0F /* Models */,
+				E547159E19D66283000C3E0F /* Views */,
 				E547159A19D65655000C3E0F /* View Controllers */,
 				E547157A19D65142000C3E0F /* AppDelegate.swift */,
 				E547158119D65143000C3E0F /* Main.storyboard */,
@@ -112,9 +116,32 @@
 		E547159A19D65655000C3E0F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E547159C19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift */,
+				E547159C19D656CD000C3E0F /* PennyOverviewTableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E547159E19D66283000C3E0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E547159F19D66295000C3E0F /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E547159F19D66295000C3E0F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E54715A019D663AA000C3E0F /* PennyOverviewTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E54715A219D66637000C3E0F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,8 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54715A119D663AA000C3E0F /* PennyOverviewTableViewCell.swift in Sources */,
 				E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */,
-				E547159D19D656CD000C3E0F /* WSWPennyOverviewTableViewController.swift in Sources */,
+				E547159D19D656CD000C3E0F /* PennyOverviewTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
