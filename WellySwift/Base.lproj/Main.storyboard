@@ -8,12 +8,12 @@
         <scene sceneID="nXw-BZ-jM3">
             <objects>
                 <tableViewController id="JFX-ct-HFc" customClass="PennyOverviewTableViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" id="MRm-gc-Xkt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" id="MRm-gc-Xkt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PennyOverviewCell" rowHeight="61" id="CRd-lR-bdA" customClass="PennyOverviewTableViewCell" customModule="WellySwift" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PennyOverviewCell" rowHeight="56" id="CRd-lR-bdA" customClass="PennyOverviewTableViewCell" customModule="WellySwift" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CRd-lR-bdA" id="dwy-IB-dH7">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -24,25 +24,25 @@
                                             <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVJ-OZ-aST">
+                                            <rect key="frame" x="20" y="41" width="560" height="5"/>
+                                            <color key="backgroundColor" red="1" green="0.60095683549400336" blue="0.54641758449414368" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                        </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d6-nZ-rTs">
                                             <rect key="frame" x="20" y="10" width="71" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVJ-OZ-aST">
-                                            <rect key="frame" x="20" y="41" width="560" height="9"/>
-                                            <color key="backgroundColor" red="1" green="0.60095683549400336" blue="0.54641758449414368" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
-                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="5d6-nZ-rTs" firstAttribute="leading" secondItem="dwy-IB-dH7" secondAttribute="leading" constant="20" id="2rB-X1-CHa"/>
                                         <constraint firstAttribute="trailing" secondItem="pX1-9o-PDe" secondAttribute="trailing" constant="20" id="3S5-hC-Oec"/>
+                                        <constraint firstAttribute="trailing" secondItem="uVJ-OZ-aST" secondAttribute="trailing" constant="20" id="Haw-MB-oUA"/>
                                         <constraint firstItem="pX1-9o-PDe" firstAttribute="top" secondItem="dwy-IB-dH7" secondAttribute="top" constant="10" id="Ozb-gH-hkh"/>
-                                        <constraint firstItem="uVJ-OZ-aST" firstAttribute="leading" secondItem="dwy-IB-dH7" secondAttribute="leading" constant="20" id="biD-ui-rFK"/>
-                                        <constraint firstAttribute="trailing" secondItem="uVJ-OZ-aST" secondAttribute="trailing" constant="20" id="fi5-7b-3ep"/>
-                                        <constraint firstAttribute="bottom" secondItem="uVJ-OZ-aST" secondAttribute="bottom" constant="10" id="iNI-AM-tr0"/>
+                                        <constraint firstAttribute="bottom" secondItem="uVJ-OZ-aST" secondAttribute="bottom" constant="9" id="ebo-sZ-EoA"/>
                                         <constraint firstItem="5d6-nZ-rTs" firstAttribute="top" secondItem="dwy-IB-dH7" secondAttribute="top" constant="10" id="uIr-V6-Jhm"/>
+                                        <constraint firstItem="uVJ-OZ-aST" firstAttribute="leading" secondItem="dwy-IB-dH7" secondAttribute="leading" constant="20" id="z14-SU-v5i"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
