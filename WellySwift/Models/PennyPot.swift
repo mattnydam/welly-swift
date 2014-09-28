@@ -10,16 +10,16 @@ import UIKit
 
 class PennyPot: NSObject {
 
-    let title:String = "";
-    let goal:Int = 0;
-    let progress:Int = 0;
+    var title:String = "";
+    var goal:Int = 0;
+    var progress:Int = 0;
     
     init(title:String, goal:Int) {
         self.title = title;
         self.goal = goal;
     }
 
-    func formattedProgress() -> String {
+    func formattedDisplayValue() -> String {
         
         return "$" + String(progress) + " of $" + String(goal);
     }

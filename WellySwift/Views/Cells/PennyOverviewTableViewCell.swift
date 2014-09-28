@@ -22,11 +22,11 @@ class PennyOverviewTableViewCell: UITableViewCell {
         var progressBarHeight = progressBar.frame.size.height;
         progressBar.layer.cornerRadius = progressBarHeight/2;
     }
+    
+    func configureWithPennyPot(pot: PennyPot) {
+        titleLabel.text = pot.title
+        valueLabel.text = pot.formattedDisplayValue();
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

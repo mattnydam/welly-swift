@@ -12,29 +12,34 @@ let cellIdentifier:String = "PennyOverviewCell"
 
 class PennyOverviewTableViewController: UITableViewController {
     
+    var pennyPots:Array<PennyPot>! = Array<PennyPot>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Loaded")
+        pennyPots = DataManager().pennyPots
+        
     }
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return 10;
+        return pennyPots.count;
     }
 
-    
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as PennyOverviewTableViewCell
+        
+        cell.configureWithPennyPot(pennyPots[indexPath.row])
         
         cell.selectionStyle = .None
-        
+    
         return cell
     }
 
