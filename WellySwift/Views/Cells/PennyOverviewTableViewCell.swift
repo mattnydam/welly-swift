@@ -14,19 +14,42 @@ class PennyOverviewTableViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var progressBar: UIView!
     
-
+    var progressWidth:CGFloat = 0.0
+    
+    lazy var currentProgressBar: UIView = {
+        return UIView()
+    }()
+    
     override func awakeFromNib() {
+
         super.awakeFromNib()
         
-        // Round dem corners gurl
-        var progressBarHeight = progressBar.frame.size.height;
-        progressBar.layer.cornerRadius = progressBarHeight/2;
+        // Round dem corners gurl2
+        var progressBarHeight = progressBar.frame.size.height
+        progressBar.layer.cornerRadius = progressBarHeight/2
+        currentProgressBar.layer.cornerRadius = progressBarHeight/2
+        
+        currentProgressBar.backgroundColor = UIColor.orangeColor()
+        
+        self.contentView.addSubview(currentProgressBar)
     }
     
     func configureWithPennyPot(pot: PennyPot) {
         titleLabel.text = pot.title
         valueLabel.text = pot.formattedDisplayValue();
-
+        progressWidth = pot.getProgressWidth(320); // Need to dynamically calculate
+        
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        var currentProgressFrame = progressBar.frame
+        currentProgressFrame.size.width = progressWidth
+        
+        currentProgressBar.frame = currentProgressFrame
+        
+    }
+
 
 }
