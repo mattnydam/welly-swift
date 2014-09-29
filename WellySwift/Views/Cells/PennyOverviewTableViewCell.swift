@@ -14,6 +14,7 @@ class PennyOverviewTableViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var progressBar: UIView!
     
+    var pennyPot:PennyPot!
     var progressWidth:CGFloat = 0.0
     
     lazy var currentProgressBar: UIView = {
@@ -35,14 +36,19 @@ class PennyOverviewTableViewCell: UITableViewCell {
     }
     
     func configureWithPennyPot(pot: PennyPot) {
-        titleLabel.text = pot.title
-        valueLabel.text = pot.formattedDisplayValue();
-        progressWidth = pot.getProgressWidth(320); // Need to dynamically calculate
+        pennyPot = pot
+        titleLabel.text = pennyPot.title
+        valueLabel.text = pennyPot.formattedDisplayValue();
         
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        if (pennyPot != nil) {
+            progressWidth = pennyPot.getProgressWidth(progressBar.bounds.size.width);
+
+        }
         
         var currentProgressFrame = progressBar.frame
         currentProgressFrame.size.width = progressWidth
