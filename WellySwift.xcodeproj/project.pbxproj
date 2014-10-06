@@ -15,6 +15,7 @@
 		E54715A119D663AA000C3E0F /* PennyOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A019D663AA000C3E0F /* PennyOverviewTableViewCell.swift */; };
 		E54715A719D66BBD000C3E0F /* PennyPot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A619D66BBD000C3E0F /* PennyPot.swift */; };
 		E54715A919D66BC7000C3E0F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A819D66BC7000C3E0F /* DataManager.swift */; };
+		E5C240BD19E2718000477453 /* AddPotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C240BC19E2718000477453 /* AddPotViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		E54715A019D663AA000C3E0F /* PennyOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PennyOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		E54715A619D66BBD000C3E0F /* PennyPot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PennyPot.swift; sourceTree = "<group>"; };
 		E54715A819D66BC7000C3E0F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E5C240BC19E2718000477453 /* AddPotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPotViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E547159C19D656CD000C3E0F /* PennyOverviewTableViewController.swift */,
+				E5C240BC19E2718000477453 /* AddPotViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5C240BD19E2718000477453 /* AddPotViewController.swift in Sources */,
 				E54715A119D663AA000C3E0F /* PennyOverviewTableViewCell.swift in Sources */,
 				E54715A919D66BC7000C3E0F /* DataManager.swift in Sources */,
 				E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */,
@@ -447,6 +451,7 @@
 				E547159619D65143000C3E0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E547159719D65143000C3E0F /* Build configuration list for PBXNativeTarget "WellySwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +460,7 @@
 				E547159919D65143000C3E0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

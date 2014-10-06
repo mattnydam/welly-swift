@@ -10,7 +10,7 @@ import UIKit
 
 let cellIdentifier:String = "PennyOverviewCell"
 
-class PennyOverviewTableViewController: UITableViewController {
+class PennyOverviewTableViewController: UITableViewController{
     
     var pennyPots:Array<PennyPot>! = Array<PennyPot>()
     
@@ -18,7 +18,6 @@ class PennyOverviewTableViewController: UITableViewController {
         super.viewDidLoad()
         
         pennyPots = DataManager().pennyPots
-        
     }
     
     // MARK: - Table view data source
@@ -43,14 +42,13 @@ class PennyOverviewTableViewController: UITableViewController {
         return cell
     }
 
-    /*
-    // MARK: - Navigation
+    // MARK: - Add Pot Delegate
+//    
+//    func addPotViewControllerShouldDismissWithPennyPot(pennyPot: PennyPot) {
+//        navigationController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+//            
+//        })
+//    }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
