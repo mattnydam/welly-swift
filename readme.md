@@ -1,6 +1,9 @@
-##Things to think about
+#Things to think about
 
+## General
 
  * Custom liftoff template
- * How are we going to store data? Simple as possible and userdefaults init with coder means funky code
- * 
+ 
+## Extra curricular
+ 
+ * Sticky table view header - Kinda easy
