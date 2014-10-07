@@ -10,7 +10,7 @@ import UIKit
 
 class DataManager: NSObject {
     
-    var pennyPots:Array<PennyPot>? = Array<PennyPot>()
+    var pennyPots:Array<PennyPot>! = Array<PennyPot>()
     
     private let pennyOne:PennyPot = PennyPot(title: "New York", goal: 5000)
     private let pennyTwo:PennyPot = PennyPot(title: "Guitar", goal: 200)
@@ -18,6 +18,13 @@ class DataManager: NSObject {
     private let pennyFour:PennyPot = PennyPot(title: "Playstation 4", goal: 640)
     private let pennyFive:PennyPot = PennyPot(title: "China trip", goal: 8000)
     private let pennySix:PennyPot = PennyPot(title: "New Car", goal: 2500)
+    
+    class var sharedInstance : DataManager {
+        struct Static {
+            static let instance : DataManager = DataManager()
+        }
+        return Static.instance
+    }
     
     override init() {
         super.init()
@@ -30,4 +37,14 @@ class DataManager: NSObject {
         self.pennyPots = [self.pennyOne, self.pennyTwo, self.pennyThree, self.pennyFour, self.pennyFive, self.pennySix];
     }
     
+    func addPennyPot(potToAdd: PennyPot?) {
+        if ((potToAdd) != nil) {
+            pennyPots?.append(potToAdd!)
+        }
+    }
+    
+    func pennyPotAtIndex(indexToRetrieve : Int!) -> PennyPot {
+        var pot:PennyPot! = pennyPots[indexToRetrieve]
+        return pot;
+    }
 }

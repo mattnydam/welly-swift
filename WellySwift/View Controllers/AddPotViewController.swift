@@ -15,6 +15,7 @@ import UIKit
 
 class AddPotViewController: UIViewController {
 
+    let pennyData:DataManager = DataManager.sharedInstance
 //    var delegate:AddPotViewControllerProtocol?
     
     override func viewDidLoad() {
@@ -23,6 +24,10 @@ class AddPotViewController: UIViewController {
     }
     
     @IBAction func dismissButtonPressed(sender: AnyObject) {
+        
+        var pot:PennyPot = PennyPot(title: "something great", goal: 9000)
+        pennyData.addPennyPot(pot)
+        
         dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
