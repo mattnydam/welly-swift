@@ -18,10 +18,8 @@ class PennyOverviewTableViewController: UITableViewController{
         super.viewDidLoad()
         
     }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -44,14 +42,4 @@ class PennyOverviewTableViewController: UITableViewController{
     
         return cell
     }
-
-    // MARK: - Add Pot Delegate
-//    
-//    func addPotViewControllerShouldDismissWithPennyPot(pennyPot: PennyPot) {
-//        navigationController?.dismissViewControllerAnimated(true, completion: { () -> Void in
-//            
-//        })
-//    }
-
-    
 }
