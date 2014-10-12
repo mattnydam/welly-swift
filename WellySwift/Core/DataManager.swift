@@ -32,7 +32,7 @@ class DataManager: NSObject {
         self.pennyTwo.progress = 146;
         self.pennyThree.progress = 1;
         self.pennyFour.progress = 0;
-        self.pennyFive.progress = 9000;
+        self.pennyFive.progress = 8000;
         self.pennySix.progress = 1200;
         self.pennyPots = [self.pennyOne, self.pennyTwo, self.pennyThree, self.pennyFour, self.pennyFive, self.pennySix];
     }

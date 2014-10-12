@@ -13,49 +13,43 @@ class PennyOverviewTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var progressBar: UIView!
+    @IBOutlet weak var currentProgressBar: UIView!
     
-    var pennyPot:PennyPot!
     var progressWidth:CGFloat = 0.0
-    
-    lazy var currentProgressBar: UIView = {
-        return UIView()
-    }()
+    var pennyPot:PennyPot!
     
     override func awakeFromNib() {
 
         super.awakeFromNib()
-        
-        // Round dem corners gurl2
+
         var progressBarHeight = progressBar.frame.size.height
-        progressBar.layer.cornerRadius = progressBarHeight/2
         currentProgressBar.layer.cornerRadius = progressBarHeight/2
-        
-        currentProgressBar.backgroundColor = UIColor.orangeColor()
-        
-        self.contentView.addSubview(currentProgressBar)
+        progressBar.layer.cornerRadius = progressBarHeight/2
     }
     
     func configureWithPennyPot(pot: PennyPot) {
         pennyPot = pot
         titleLabel.text = pennyPot.title
         valueLabel.text = pennyPot.formattedDisplayValue();
-        
-    }
 
+        progressBar.setNeedsLayout()
+        currentProgressBar.updateConstraints()
+
+    }
     override func layoutSubviews() {
+     
         super.layoutSubviews()
-        
-        if (pennyPot != nil) {
-            progressWidth = pennyPot.getProgressWidth(progressBar.bounds.size.width);
-
-        }
-        
-        var currentProgressFrame = progressBar.frame
-        currentProgressFrame.size.width = progressWidth
-        
-        currentProgressBar.frame = currentProgressFrame
-        
     }
+    
+    override func updateConstraints() {
 
+        var pennyWidth = pennyPot.getProgressWidth(280)
+        progressWidth = progressBar.frame.size.width
 
+        println(progressWidth)
+        var constraint:NSLayoutConstraint = NSLayoutConstraint(item: currentProgressBar, attribute: .Width, relatedBy: .Equal, toItem:progressBar, attribute: .Width, multiplier: 0, constant: pennyWidth)
+        currentProgressBar.addConstraints([constraint])
+        
+        super.updateConstraints()
+    }
 }
