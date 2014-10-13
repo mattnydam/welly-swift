@@ -47,4 +47,8 @@ class DataManager: NSObject {
         var pot:PennyPot! = pennyPots[indexToRetrieve]
         return pot;
     }
+    
+    func removePotAtIndex(indexToRemove: Int!) {
+        pennyPots.removeAtIndex(indexToRemove)
+    }
 }

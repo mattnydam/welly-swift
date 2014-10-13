@@ -13,9 +13,13 @@ protocol AddPotViewControllerProtocol {
     func addPotViewControllerDidDismissWithPennyPot(pennyPot: PennyPot);
 }
 
-class AddPotViewController: UIViewController {
+class AddPotViewController: UIViewController, UITextFieldDelegate {
 
     var delegate:AddPotViewControllerProtocol?
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var goalTextField: UITextField!
+    @IBOutlet weak var currentProgressTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,15 @@ class AddPotViewController: UIViewController {
         if (delegate != nil) {
             delegate?.addPotViewControllerDidDismissWithPennyPot(PennyPot(title: "Yay", goal: 200))
         }
+    }
+    
+    // MARK: - Text field Delegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField == currentProgressTextField) {
+            println("Current")
+        }
+        return true
     }
 
 }

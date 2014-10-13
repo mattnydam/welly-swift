@@ -43,7 +43,20 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
         return cell
     }
     
-    // MARK: - Add pot view controller
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if (editingStyle == .Delete) {
+            pennyData.removePotAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        
+    }
+    
+    // MARK: - Add pot view controller delegate
     func addPotViewControllerDidDismissWithPennyPot(pennyPot: PennyPot) {
         pennyData.addPennyPot(pennyPot)
         tableView.reloadData()
