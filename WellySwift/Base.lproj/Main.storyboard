@@ -42,9 +42,9 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PennyOverviewCell" rowHeight="56" id="CRd-lR-bdA" customClass="PennyOverviewTableViewCell" customModule="WellySwift" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="56" selectionStyle="default" indentationWidth="10" reuseIdentifier="PennyOverviewCell" rowHeight="56" id="CRd-lR-bdA" customClass="PennyOverviewTableViewCell" customModule="WellySwift" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CRd-lR-bdA" id="dwy-IB-dH7">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="55" tableViewCell="CRd-lR-bdA" id="dwy-IB-dH7">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1900 of $2000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pX1-9o-PDe">

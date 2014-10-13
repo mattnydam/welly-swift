@@ -43,7 +43,8 @@ class PennyOverviewTableViewCell: UITableViewCell {
     
     override func updateConstraints() {
 
-        var pennyWidth = pennyPot.getProgressWidth(280) // TODO
+        var currentWidth = contentView.bounds.size.width - 40 // 40 includes our two edge insets
+        var pennyWidth = pennyPot.getProgressWidth(currentWidth)
         
         var constraint:NSLayoutConstraint = NSLayoutConstraint(item: currentProgressBar, attribute: .Width, relatedBy: .Equal, toItem:progressBar, attribute: .Width, multiplier: 0, constant: pennyWidth)
         currentProgressBar.addConstraints([constraint])
