@@ -8,15 +8,14 @@
 
 import UIKit
 
-//protocol AddPotViewControllerProtocol {
-//    
-//    func addPotViewControllerShouldDismissWithPennyPot(pennyPot: PennyPot);
-//}
+protocol AddPotViewControllerProtocol {
+    
+    func addPotViewControllerDidDismissWithPennyPot(pennyPot: PennyPot);
+}
 
 class AddPotViewController: UIViewController {
 
-    let pennyData:DataManager = DataManager.sharedInstance
-//    var delegate:AddPotViewControllerProtocol?
+    var delegate:AddPotViewControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +24,13 @@ class AddPotViewController: UIViewController {
     
     @IBAction func dismissButtonPressed(sender: AnyObject) {
         
-        var pot:PennyPot = PennyPot(title: "something great", goal: 9000)
-        pennyData.addPennyPot(pot)
+        if (delegate != nil) {
+            delegate?.addPotViewControllerDidDismissWithPennyPot(PennyPot(title: "Yay", goal: 200))
+        }
         
         dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
-//        delegate?.addPotViewControllerShouldDismissWithPennyPot(PennyPot(title: "Yay", goal: 200))
         
     }
 

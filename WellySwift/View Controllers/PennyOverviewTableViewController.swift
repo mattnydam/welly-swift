@@ -10,7 +10,7 @@ import UIKit
 
 let cellIdentifier:String = "PennyOverviewCell"
 
-class PennyOverviewTableViewController: UITableViewController{
+class PennyOverviewTableViewController: UITableViewController, AddPotViewControllerProtocol{
     
     let pennyData:DataManager! = DataManager.sharedInstance
     
@@ -41,5 +41,19 @@ class PennyOverviewTableViewController: UITableViewController{
         cell.selectionStyle = .None
     
         return cell
+    }
+    
+    // MARK: - Add pot view controller
+    func addPotViewControllerDidDismissWithPennyPot(pennyPot: PennyPot) {
+        pennyData.addPennyPot(pennyPot)
+        tableView.reloadData()
+    }
+    
+    // MARK: - Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "presentAddPotViewController"{
+            let addPotViewController = segue.destinationViewController as AddPotViewController
+            addPotViewController.delegate = self
+        }
     }
 }
