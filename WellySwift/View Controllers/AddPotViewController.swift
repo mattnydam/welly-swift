@@ -22,16 +22,18 @@ class AddPotViewController: UIViewController {
 
     }
     
-    @IBAction func dismissButtonPressed(sender: AnyObject) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let cancelButton:UIBarButtonItem? = sender as? UIBarButtonItem
+        
+        if ((cancelButton) != nil) {
+            println("I was cancelled from the navigation bar")
+            return
+        }
         
         if (delegate != nil) {
             delegate?.addPotViewControllerDidDismissWithPennyPot(PennyPot(title: "Yay", goal: 200))
         }
-        
-        dismissViewControllerAnimated(true, completion: { () -> Void in
-            
-        })
-        
     }
 
 }

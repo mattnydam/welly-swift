@@ -126,7 +126,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissButtonPressed:" destination="dQ1-XI-z82" eventType="touchUpInside" id="LNc-5S-T3O"/>
+                                    <segue destination="ReQ-Jo-Fvu" kind="unwind" unwindAction="unwindFromAdd:" id="UFL-BV-15e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,9 +136,16 @@
                             <constraint firstItem="X0m-CM-qej" firstAttribute="centerY" secondItem="dzL-fc-bgr" secondAttribute="centerY" id="81Z-ic-5mF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aRt-V2-LiT"/>
+                    <navigationItem key="navigationItem" id="aRt-V2-LiT">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="fNc-ak-1KM">
+                            <connections>
+                                <segue destination="ReQ-Jo-Fvu" kind="unwind" unwindAction="unwindFromAdd:" id="BbV-yS-lEw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4Y-dL-KuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ReQ-Jo-Fvu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1759" y="483"/>
         </scene>

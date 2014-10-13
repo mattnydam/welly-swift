@@ -50,10 +50,18 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
     }
     
     // MARK: - Segue
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "presentAddPotViewController"{
             let addPotController = segue.destinationViewController.topViewController as AddPotViewController
             addPotController.delegate = self
         }
+    }
+
+    // Unwind from our modal view controller!
+    @IBAction func unwindFromAdd(segue: UIStoryboardSegue) {
+        
+        segue.sourceViewController.dismissViewControllerAnimated(true, completion: { () -> Void in
+            })
     }
 }
