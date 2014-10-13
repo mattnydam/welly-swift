@@ -52,8 +52,8 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "presentAddPotViewController"{
-            let addPotViewController = segue.destinationViewController as AddPotViewController
-            addPotViewController.delegate = self
+            let addPotController = segue.destinationViewController.topViewController as AddPotViewController
+            addPotController.delegate = self
         }
     }
 }

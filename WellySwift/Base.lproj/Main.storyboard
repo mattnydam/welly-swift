@@ -26,7 +26,7 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <segue destination="dQ1-XI-z82" kind="presentation" identifier="presentAddPotViewController" id="yeu-UA-m8F"/>
+                                        <segue destination="82D-9F-Hvt" kind="presentation" identifier="presentAddPotViewController" id="0Qw-4e-qaQ"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="612" y="463"/>
         </scene>
-        <!--Add Pot View Controller-->
+        <!--Add New-->
         <scene sceneID="bN3-w7-lWh">
             <objects>
-                <viewController storyboardIdentifier="addPotViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dQ1-XI-z82" customClass="AddPotViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addPotViewController" title="Add New" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dQ1-XI-z82" customClass="AddPotViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bD2-q1-hM3"/>
                         <viewControllerLayoutGuide type="bottom" id="5aI-b2-pMP"/>
@@ -130,16 +130,35 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.21043092094592142" blue="0.25546596873716598" alpha="0.44" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="X0m-CM-qej" firstAttribute="centerX" secondItem="dzL-fc-bgr" secondAttribute="centerX" id="59k-N4-SxK"/>
                             <constraint firstItem="X0m-CM-qej" firstAttribute="centerY" secondItem="dzL-fc-bgr" secondAttribute="centerY" id="81Z-ic-5mF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aRt-V2-LiT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4Y-dL-KuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="463"/>
+            <point key="canvasLocation" x="1759" y="483"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="crV-dv-Gup">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82D-9F-Hvt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cZ2-Up-P44">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dQ1-XI-z82" kind="relationship" relationship="rootViewController" id="oYA-zw-dyl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ug1-it-wU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423" y="-267"/>
         </scene>
     </scenes>
     <resources>
