@@ -38,8 +38,7 @@ class PennyOverviewTableViewCell: UITableViewCell {
         titleLabel.text = pennyPot.title
         valueLabel.text = pennyPot.formattedDisplayValue();
 
-        progressBar.updateConstraints()
-        currentProgressBar.updateConstraints()
+        self.updateConstraints()
 
     }
 
@@ -53,7 +52,7 @@ class PennyOverviewTableViewCell: UITableViewCell {
     
     override func updateConstraints() {
 
-        var currentWidth = contentView.bounds.size.width - 40 // 40 includes our two edge insets
+        var currentWidth = contentView.bounds.size.width - 40 // 40 includes our two edge insets. Let's change
         var pennyWidth = pennyPot.getProgressWidth(currentWidth)
         
         dynamicWidthConstraint = NSLayoutConstraint(item: currentProgressBar, attribute: .Width, relatedBy: .Equal, toItem:progressBar, attribute: .Width, multiplier: 0, constant: pennyWidth)

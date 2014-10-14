@@ -98,7 +98,7 @@ class AddPotViewController: UIViewController, UITextFieldDelegate {
         }
         
         if (!allFormFieldsAreValid()) {
-            println("Please fill out all the fields and make sure they are valid!")
+            println("Please fill out all the fields and make sure they are valid!") // Extra curricular - Validation
             return
         }
         
