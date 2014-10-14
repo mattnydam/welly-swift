@@ -28,6 +28,7 @@ class PennyPot: NSObject {
     }
     
     init(title:String!, goal:Int!) {
+        super.init()
         self.title = title
         self.goal = goal
     }
@@ -55,5 +56,20 @@ class PennyPot: NSObject {
         var percentageFraction = maxWidth * (percent/100.0)
         
         return percentageFraction
+    }
+    
+    // MARK - Serialization
+    
+    // Used for NSUserDefaults
+    func encodeWithCoder(aCoder: NSCoder!) {
+        aCoder.encodeObject(self.title, forKey: "title")
+        aCoder.encodeObject(self.goal, forKey: "goal")
+        aCoder.encodeObject(self.progress, forKey: "progress")
+    }
+    
+    init(coder aDecoder: NSCoder!) {
+        self.title = aDecoder.decodeObjectForKey("title") as String
+        self.goal = aDecoder.decodeObjectForKey("goal") as Int
+        self.progress = aDecoder.decodeObjectForKey("progress") as Int
     }
 }

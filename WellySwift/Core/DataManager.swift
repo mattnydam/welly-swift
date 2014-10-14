@@ -10,14 +10,9 @@ import UIKit
 
 class DataManager: NSObject {
     
-    var pennyPots:Array<PennyPot>! = Array<PennyPot>()
+    let userDefaultsKey:String! = "storedPennyArray"
     
-    private let pennyOne:PennyPot = PennyPot(title: "New York", goal: 5000)
-    private let pennyTwo:PennyPot = PennyPot(title: "Guitar", goal: 200)
-    private let pennyThree:PennyPot = PennyPot(title: "Ski trip", goal: 1200)
-    private let pennyFour:PennyPot = PennyPot(title: "Playstation 4", goal: 640)
-    private let pennyFive:PennyPot = PennyPot(title: "China trip", goal: 8000)
-    private let pennySix:PennyPot = PennyPot(title: "New Car", goal: 2500)
+    var pennyPots:Array<PennyPot>! = Array<PennyPot>()
     
     class var sharedInstance : DataManager {
         struct Static {
@@ -28,20 +23,36 @@ class DataManager: NSObject {
     
     override init() {
         super.init()
-        self.pennyOne.progress = 3000;
-        self.pennyTwo.progress = 146;
-        self.pennyThree.progress = 1;
-        self.pennyFour.progress = 0;
-        self.pennyFive.progress = 8000;
-        self.pennySix.progress = 1200;
-//        self.pennyPots = [self.pennyOne, self.pennyTwo, self.pennyThree, self.pennyFour, self.pennyFive, self.pennySix];
-        self.pennyPots = [self.pennyOne]
+        let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        // Pull our current object array out.
+        var pennyObjectArray:[NSArray]? = defaults.objectForKey(userDefaultsKey) as? [NSArray]
+        
+        if (pennyObjectArray == nil) { // This hasn't been created yet, soo let's do it!
+            saveCurrentObjectArrayToDefaults()
+        } else {
+
+        }
+        
     }
+    
+    // MARK - Add, Remove, Retrieve, Replace
     
     func addPennyPot(potToAdd: PennyPot?) {
         if ((potToAdd) != nil) {
             pennyPots?.append(potToAdd!)
         }
+        saveCurrentObjectArrayToDefaults()
+    }
+    
+    func replacePennyObjectAtIndex(indexToReplace: Int!, objectToAdd: PennyPot) {
+        pennyPots[indexToReplace] = objectToAdd
+        saveCurrentObjectArrayToDefaults()
+    }
+    
+    func removePotAtIndex(indexToRemove: Int!) {
+        pennyPots.removeAtIndex(indexToRemove)
+        saveCurrentObjectArrayToDefaults()
     }
     
     func pennyPotAtIndex(indexToRetrieve : Int!) -> PennyPot {
@@ -49,11 +60,13 @@ class DataManager: NSObject {
         return pot;
     }
     
-    func replacePennyObjectAtIndex(indexToReplace: Int!, objectToAdd: PennyPot) {
-        pennyPots[indexToReplace] = objectToAdd
+    // MARK - Saving Loading
+    
+    func saveCurrentObjectArrayToDefaults() {
+
+//        let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+//        defaults.setObject(pennyPots, forKey: userDefaultsKey)
+//        defaults.synchronize()
     }
     
-    func removePotAtIndex(indexToRemove: Int!) {
-        pennyPots.removeAtIndex(indexToRemove)
-    }
 }
