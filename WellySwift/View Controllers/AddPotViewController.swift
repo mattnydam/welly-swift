@@ -36,7 +36,9 @@ class AddPotViewController: UIViewController, UITextFieldDelegate {
         }
         
         if (delegate != nil) {
-            delegate?.addPotViewControllerDidDismissWithPennyPot(PennyPot(title: "Yay", goal: 200))
+            var pot = PennyPot(title: "Yay", goal: 200)
+            pot.progress = 100
+            delegate?.addPotViewControllerDidDismissWithPennyPot(pot)
         }
     }
     

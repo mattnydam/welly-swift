@@ -34,7 +34,8 @@ class DataManager: NSObject {
         self.pennyFour.progress = 0;
         self.pennyFive.progress = 8000;
         self.pennySix.progress = 1200;
-        self.pennyPots = [self.pennyOne, self.pennyTwo, self.pennyThree, self.pennyFour, self.pennyFive, self.pennySix];
+//        self.pennyPots = [self.pennyOne, self.pennyTwo, self.pennyThree, self.pennyFour, self.pennyFive, self.pennySix];
+        self.pennyPots = [self.pennyOne]
     }
     
     func addPennyPot(potToAdd: PennyPot?) {

@@ -18,10 +18,16 @@ class PennyOverviewTableViewCell: UITableViewCell {
     var progressWidth:CGFloat = 0.0
     var pennyPot:PennyPot!
     
+    var dynamicWidthConstraint:NSLayoutConstraint!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func awakeFromNib() {
 
         super.awakeFromNib()
-
+        
         var progressBarHeight = progressBar.frame.size.height
         currentProgressBar.layer.cornerRadius = progressBarHeight/2
         progressBar.layer.cornerRadius = progressBarHeight/2
@@ -32,13 +38,17 @@ class PennyOverviewTableViewCell: UITableViewCell {
         titleLabel.text = pennyPot.title
         valueLabel.text = pennyPot.formattedDisplayValue();
 
-        progressBar.setNeedsLayout()
+        progressBar.updateConstraints()
         currentProgressBar.updateConstraints()
 
     }
-    override func layoutSubviews() {
-     
-        super.layoutSubviews()
+
+    override func prepareForReuse() {
+        
+        dynamicWidthConstraint = NSLayoutConstraint(item: currentProgressBar, attribute: .Width, relatedBy: .Equal, toItem:progressBar, attribute: .Width, multiplier: 0, constant: 0)
+
+        currentProgressBar.updateConstraints()
+        super.prepareForReuse()
     }
     
     override func updateConstraints() {
@@ -46,8 +56,8 @@ class PennyOverviewTableViewCell: UITableViewCell {
         var currentWidth = contentView.bounds.size.width - 40 // 40 includes our two edge insets
         var pennyWidth = pennyPot.getProgressWidth(currentWidth)
         
-        var constraint:NSLayoutConstraint = NSLayoutConstraint(item: currentProgressBar, attribute: .Width, relatedBy: .Equal, toItem:progressBar, attribute: .Width, multiplier: 0, constant: pennyWidth)
-        currentProgressBar.addConstraints([constraint])
+        dynamicWidthConstraint = NSLayoutConstraint(item: currentProgressBar, attribute: .Width, relatedBy: .Equal, toItem:progressBar, attribute: .Width, multiplier: 0, constant: pennyWidth)
+        currentProgressBar.addConstraints([dynamicWidthConstraint])
         
         super.updateConstraints()
     }
