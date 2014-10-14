@@ -27,7 +27,7 @@ class PennyPot: NSObject {
         }
     }
     
-    init(title:String, goal:Int) {
+    init(title:String!, goal:Int!) {
         self.title = title
         self.goal = goal
     }

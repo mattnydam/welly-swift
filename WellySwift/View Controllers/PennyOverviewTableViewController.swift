@@ -47,6 +47,8 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
         return true
     }
     
+    // MARK: - Table view delegate
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if (editingStyle == .Delete) {
@@ -56,14 +58,37 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
         
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        let pennyToEdit:PennyPot! = pennyData.pennyPotAtIndex(indexPath.row)
+        
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let editPotViewController:AddPotViewController = mainStoryboard.instantiateViewControllerWithIdentifier("addPotViewController")
+         as AddPotViewController
+        let editNavigation:UINavigationController = UINavigationController(rootViewController: editPotViewController)
+        
+        editPotViewController.delegate = self
+        editPotViewController.configureFormWithPennyPotAtIndex(pennyToEdit, index: indexPath.row)
+        
+        // configure
+        
+        self.presentViewController(editNavigation, animated: true, completion:nil)
+        
+    }
+    
     // MARK: - Add pot view controller delegate
+    
     func addPotViewControllerDidDismissWithPennyPot(pennyPot: PennyPot) {
         pennyData.addPennyPot(pennyPot)
         tableView.reloadData()
     }
     
-    // MARK: - Segue
+    func addPotViewControllerDidDismissWithObjectAndPosition(pennyPot: PennyPot, index: Int) {
+        pennyData.replacePennyObjectAtIndex(index, objectToAdd: pennyPot)
+        tableView.reloadData()
+    }
     
+    // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "presentAddPotViewController"{
             let addPotController = segue.destinationViewController.topViewController as AddPotViewController

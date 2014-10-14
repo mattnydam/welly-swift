@@ -49,6 +49,10 @@ class DataManager: NSObject {
         return pot;
     }
     
+    func replacePennyObjectAtIndex(indexToReplace: Int!, objectToAdd: PennyPot) {
+        pennyPots[indexToReplace] = objectToAdd
+    }
+    
     func removePotAtIndex(indexToRemove: Int!) {
         pennyPots.removeAtIndex(indexToRemove)
     }
