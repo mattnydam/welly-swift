@@ -15,11 +15,11 @@ class PennyOverviewTableViewCell: UITableViewCell {
     @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var currentProgressBar: UIView!
     
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
+
     var progressWidth:CGFloat = 0.0
     var pennyPot:PennyPot!
-    
-    var dynamicWidthConstraint:NSLayoutConstraint!
-    
+        
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -38,25 +38,22 @@ class PennyOverviewTableViewCell: UITableViewCell {
         titleLabel.text = pennyPot.title
         valueLabel.text = pennyPot.formattedDisplayValue();
 
-        self.updateConstraints()
+        updateConstraints()
 
     }
 
     override func prepareForReuse() {
         
-        dynamicWidthConstraint = NSLayoutConstraint(item: currentProgressBar, attribute: .Width, relatedBy: .Equal, toItem:progressBar, attribute: .Width, multiplier: 0, constant: 0)
-
-        currentProgressBar.updateConstraints()
+        progressBarWidthConstraint.constant = 0
         super.prepareForReuse()
     }
     
     override func updateConstraints() {
 
-        var currentWidth = contentView.bounds.size.width - 40 // 40 includes our two edge insets. Let's change
-        var pennyWidth = pennyPot.getProgressWidth(currentWidth)
-        
-        dynamicWidthConstraint = NSLayoutConstraint(item: currentProgressBar, attribute: .Width, relatedBy: .Equal, toItem:progressBar, attribute: .Width, multiplier: 0, constant: pennyWidth)
-        currentProgressBar.addConstraints([dynamicWidthConstraint])
+        var maxWidth:CGFloat! = contentView.bounds.size.width - 40 // 40 includes our two edge insets. Let's change
+        var pennyWidth:CGFloat! = pennyPot.getProgressWidth(maxWidth) // Let's get the width of progress based on our max width
+
+        progressBarWidthConstraint.constant = pennyWidth // Set the width of our constraint. This will reflect in the UI! Cool!
         
         super.updateConstraints()
     }

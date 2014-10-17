@@ -65,8 +65,8 @@
                                             <rect key="frame" x="20" y="41" width="560" height="5"/>
                                             <color key="backgroundColor" red="0.60503094608086294" green="0.53775830747502096" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="5" id="Tw2-tO-m7T"/>
-                                                <constraint firstAttribute="width" constant="560" id="Ufi-W9-BBa"/>
+                                                <constraint firstAttribute="width" constant="560" id="48g-Bb-PFl"/>
+                                                <constraint firstAttribute="height" constant="5" id="4vk-BQ-Lh9"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d6-nZ-rTs">
@@ -78,19 +78,20 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="uVJ-OZ-aST" secondAttribute="bottom" constant="9" id="1R3-qn-nlk"/>
+                                        <constraint firstItem="CLO-9r-TPs" firstAttribute="leading" secondItem="dwy-IB-dH7" secondAttribute="leading" constant="20" id="4hm-sX-wiU"/>
                                         <constraint firstItem="uVJ-OZ-aST" firstAttribute="leading" secondItem="dwy-IB-dH7" secondAttribute="leading" constant="20" id="Agf-2D-rZo"/>
-                                        <constraint firstItem="CLO-9r-TPs" firstAttribute="leading" secondItem="dwy-IB-dH7" secondAttribute="leading" constant="20" id="FOS-4t-Ow4"/>
                                         <constraint firstItem="5d6-nZ-rTs" firstAttribute="top" secondItem="dwy-IB-dH7" secondAttribute="top" constant="10" id="GYd-zB-DQ3"/>
                                         <constraint firstAttribute="trailing" secondItem="uVJ-OZ-aST" secondAttribute="trailing" constant="20" id="K2m-HH-rY3"/>
                                         <constraint firstItem="pX1-9o-PDe" firstAttribute="top" secondItem="dwy-IB-dH7" secondAttribute="top" constant="10" id="N4Z-Cx-WsN"/>
                                         <constraint firstAttribute="trailing" secondItem="pX1-9o-PDe" secondAttribute="trailing" constant="20" id="VMa-L1-oHg"/>
+                                        <constraint firstAttribute="bottom" secondItem="CLO-9r-TPs" secondAttribute="bottom" constant="9" id="ZN1-2b-9Nh"/>
                                         <constraint firstItem="5d6-nZ-rTs" firstAttribute="leading" secondItem="dwy-IB-dH7" secondAttribute="leading" constant="20" id="bCN-sn-GSw"/>
-                                        <constraint firstAttribute="bottom" secondItem="CLO-9r-TPs" secondAttribute="bottom" constant="9" id="e8i-8j-zr8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="currentProgressBar" destination="CLO-9r-TPs" id="xje-ll-enY"/>
                                     <outlet property="progressBar" destination="uVJ-OZ-aST" id="RWZ-gI-MFO"/>
+                                    <outlet property="progressBarWidthConstraint" destination="48g-Bb-PFl" id="0At-lU-jyq"/>
                                     <outlet property="titleLabel" destination="5d6-nZ-rTs" id="vvy-xu-YPd"/>
                                     <outlet property="valueLabel" destination="pX1-9o-PDe" id="WEf-Zr-9kH"/>
                                 </connections>
