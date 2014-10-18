@@ -2,7 +2,7 @@
 
 #About this project
 
-** This is a simple iOS application written in Swift that we used to run an introductory iOS development course [Welly Swift](http://swift.hackpack.co.nz/) **
+**This is a simple iOS application written in Swift that we used to run an introductory iOS development course [Welly Swift](http://swift.hackpack.co.nz/)**
 
 Please feel free to fork this repository and use it as a template to create your own iOS development course to run in your local community.
 
