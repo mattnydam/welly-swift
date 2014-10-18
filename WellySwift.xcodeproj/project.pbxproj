@@ -41,6 +41,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37C99A0819F207FA006268BA /* Data Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E54715A819D66BC7000C3E0F /* DataManager.swift */,
+			);
+			name = "Data Managers";
+			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		37C99A0919F20851006268BA /* Custom Objects */ = {
+			isa = PBXGroup;
+			children = (
+				E54715A619D66BBD000C3E0F /* SavingsTarget.swift */,
+			);
+			name = "Custom Objects";
+			path = CustomObjects;
+			sourceTree = "<group>";
+		};
 		E547156C19D65142000C3E0F = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				E54715A519D66B84000C3E0F /* Core */,
-				E54715A219D66637000C3E0F /* Models */,
 				E547159E19D66283000C3E0F /* Views */,
 				E547159A19D65655000C3E0F /* View Controllers */,
 				E547157A19D65142000C3E0F /* AppDelegate.swift */,
@@ -105,18 +122,11 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		E54715A219D66637000C3E0F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E54715A619D66BBD000C3E0F /* SavingsTarget.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		E54715A519D66B84000C3E0F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E54715A819D66BC7000C3E0F /* DataManager.swift */,
+				37C99A0919F20851006268BA /* Custom Objects */,
+				37C99A0819F207FA006268BA /* Data Managers */,
 			);
 			path = Core;
 			sourceTree = "<group>";
