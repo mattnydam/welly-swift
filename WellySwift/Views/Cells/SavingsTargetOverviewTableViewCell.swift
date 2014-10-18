@@ -1,5 +1,5 @@
 //
-//  PennyOverviewTableViewCell.swift
+//  SavingsTargetOverviewTableViewCell.swift
 //  WellySwift
 //
 //  Created by Matt Nydam on 27/09/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PennyOverviewTableViewCell: UITableViewCell {
+class SavingsTargetOverviewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
@@ -18,7 +18,7 @@ class PennyOverviewTableViewCell: UITableViewCell {
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
 
     var progressWidth:CGFloat = 0.0
-    var pennyPot:PennyPot!
+    var currentTarget:SavingsTarget!
         
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,10 +33,10 @@ class PennyOverviewTableViewCell: UITableViewCell {
         progressBar.layer.cornerRadius = progressBarHeight/2
     }
     
-    func configureWithPennyPot(pot: PennyPot) {
-        pennyPot = pot
-        titleLabel.text = pennyPot.title
-        valueLabel.text = pennyPot.formattedDisplayValue();
+    func configureWithSavingsTarget(target: SavingsTarget) {
+        currentTarget = target
+        titleLabel.text = currentTarget.title
+        valueLabel.text = currentTarget.formattedDisplayValue();
 
         updateConstraints()
 
@@ -51,9 +51,10 @@ class PennyOverviewTableViewCell: UITableViewCell {
     override func updateConstraints() {
 
         var maxWidth:CGFloat! = contentView.bounds.size.width - 40 // 40 includes our two edge insets. Let's change
-        var pennyWidth:CGFloat! = pennyPot.getProgressWidth(maxWidth) // Let's get the width of progress based on our max width
+        
+        var savingsGoalProgressWidth:CGFloat! = currentTarget.getProgressWidth(maxWidth) // Let's get the width of progress based on our max width
 
-        progressBarWidthConstraint.constant = pennyWidth // Set the width of our constraint. This will reflect in the UI! Cool!
+        progressBarWidthConstraint.constant = savingsGoalProgressWidth // Set the width of our constraint. This will reflect in the UI! Cool!
         
         super.updateConstraints()
     }

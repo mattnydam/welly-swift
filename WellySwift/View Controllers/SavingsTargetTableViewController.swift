@@ -1,5 +1,5 @@
 //
-//  WSWPennyOverviewTableViewController.swift
+//  SavingsTargetOverviewTableViewController.swift
 //  WellySwift
 //
 //  Created by Matt Nydam on 27/09/14.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-let cellIdentifier:String = "PennyOverviewCell"
+let cellIdentifier:String = "SavingsTargetOverviewCell"
 
-class PennyOverviewTableViewController: UITableViewController, AddPotViewControllerProtocol{
+class SavingsTargetOverviewTableViewController: UITableViewController, AddSavingsTargetViewControllerProtocol{
     
-    let pennyData:DataManager! = DataManager.sharedInstance
+    let savingsTargetsData:DataManager! = DataManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +30,13 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return pennyData.pennyPots.count
+        return savingsTargetsData.allSavingsTargets.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as PennyOverviewTableViewCell
-        cell.configureWithPennyPot(pennyData.pennyPotAtIndex(indexPath.row))
-        
-        cell.selectionStyle = .None
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as SavingsTargetOverviewTableViewCell
+        cell.configureWithSavingsTarget(savingsTargetsData.savingsTargetAtPosition(indexPath.row))
     
         return cell
     }
@@ -52,7 +50,7 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if (editingStyle == .Delete) {
-            pennyData.removePotAtIndex(indexPath.row)
+            savingsTargetsData.removeSavingsTargetAtPosition(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
         
@@ -60,15 +58,16 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        let pennyToEdit:PennyPot! = pennyData.pennyPotAtIndex(indexPath.row)
+        let savingsTargetToEdit:SavingsTarget! = savingsTargetsData.savingsTargetAtPosition(indexPath.row)
         
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let editPotViewController:AddPotViewController = mainStoryboard.instantiateViewControllerWithIdentifier("addPotViewController")
-         as AddPotViewController
-        let editNavigation:UINavigationController = UINavigationController(rootViewController: editPotViewController)
+        let editSavingsTargetViewController:AddSavingsTargetViewController = mainStoryboard.instantiateViewControllerWithIdentifier("addSavingsTargetViewController")
+         as AddSavingsTargetViewController
         
-        editPotViewController.delegate = self
-        editPotViewController.configureFormWithPennyPotAtIndex(pennyToEdit, index: indexPath.row)
+        let editNavigation:UINavigationController = UINavigationController(rootViewController: editSavingsTargetViewController)
+        
+        editSavingsTargetViewController.delegate = self
+        editSavingsTargetViewController.configureFormWithSavingsTarget(savingsTargetToEdit, index: indexPath.row)
         
         // configure
         
@@ -76,23 +75,23 @@ class PennyOverviewTableViewController: UITableViewController, AddPotViewControl
         
     }
     
-    // MARK: - Add pot view controller delegate
+    // MARK: - Add Savings Target view controller delegate
     
-    func addPotViewControllerDidDismissWithPennyPot(pennyPot: PennyPot) {
-        pennyData.addPennyPot(pennyPot)
+    func addSavingsTargetViewControllerDidDismissWithSavingsTarget(target: SavingsTarget) {
+        savingsTargetsData.addSavingsTarget(target)
         tableView.reloadData()
     }
     
-    func addPotViewControllerDidDismissWithObjectAndPosition(pennyPot: PennyPot, index: Int) {
-        pennyData.replacePennyObjectAtIndex(index, objectToAdd: pennyPot)
+    func addSavingsTargetViewControllerDidDismissWithObjectAndPosition(target: SavingsTarget, index: Int) {
+        savingsTargetsData.replaceSavingsTargetAtPosition(index, objectToAdd: target)
         tableView.reloadData()
     }
     
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "presentAddPotViewController"{
-            let addPotController = segue.destinationViewController.topViewController as AddPotViewController
-            addPotController.delegate = self
+        if segue.identifier == "presentSavingsTargetViewController"{
+            let addSavingsViewController = segue.destinationViewController.topViewController as AddSavingsTargetViewController
+            addSavingsViewController.delegate = self
         }
     }
 

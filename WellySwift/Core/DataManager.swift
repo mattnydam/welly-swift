@@ -10,9 +10,9 @@ import UIKit
 
 class DataManager: NSObject {
     
-    let userDefaultsKey:String! = "storedPennyArray"
+    let userDefaultsKey:String! = "storedSavingsTargetArray"
     
-    var pennyPots:Array<PennyPot>! = Array<PennyPot>()
+    var allSavingsTargets:Array<SavingsTarget>! = Array<SavingsTarget>()
     
     class var sharedInstance : DataManager {
         struct Static {
@@ -22,51 +22,38 @@ class DataManager: NSObject {
     }
     
     override init() {
-        super.init()
         let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        
-        // Pull our current object array out.
-        var pennyObjectArray:[NSArray]? = defaults.objectForKey(userDefaultsKey) as? [NSArray]
-        
-        if (pennyObjectArray == nil) { // This hasn't been created yet, soo let's do it!
-            saveCurrentObjectArrayToDefaults()
-        } else {
-
-        }
-        
+        super.init()
     }
     
     // MARK - Add, Remove, Retrieve, Replace
     
-    func addPennyPot(potToAdd: PennyPot?) {
-        if ((potToAdd) != nil) {
-            pennyPots?.append(potToAdd!)
+    func addSavingsTarget(savingsTargetToAdd: SavingsTarget?) {
+        if ((savingsTargetToAdd) != nil) {
+            allSavingsTargets?.append(savingsTargetToAdd!)
         }
         saveCurrentObjectArrayToDefaults()
     }
     
-    func replacePennyObjectAtIndex(indexToReplace: Int!, objectToAdd: PennyPot) {
-        pennyPots[indexToReplace] = objectToAdd
+    func replaceSavingsTargetAtPosition(position: Int!, objectToAdd: SavingsTarget) {
+        allSavingsTargets[position] = objectToAdd
         saveCurrentObjectArrayToDefaults()
     }
     
-    func removePotAtIndex(indexToRemove: Int!) {
-        pennyPots.removeAtIndex(indexToRemove)
+    func removeSavingsTargetAtPosition(position: Int!) {
+        allSavingsTargets.removeAtIndex(position)
         saveCurrentObjectArrayToDefaults()
     }
     
-    func pennyPotAtIndex(indexToRetrieve : Int!) -> PennyPot {
-        var pot:PennyPot! = pennyPots[indexToRetrieve]
-        return pot;
+    func savingsTargetAtPosition(position : Int!) -> SavingsTarget {
+        var target:SavingsTarget! = allSavingsTargets[position]
+        return target;
     }
     
     // MARK - Saving Loading
     
     func saveCurrentObjectArrayToDefaults() {
-
-//        let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-//        defaults.setObject(pennyPots, forKey: userDefaultsKey)
-//        defaults.synchronize()
+        
     }
     
 }

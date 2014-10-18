@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Penny Overview Table View Controller-->
+        <!--Savings Target Overview Table View Controller-->
         <scene sceneID="nXw-BZ-jM3">
             <objects>
-                <tableViewController id="JFX-ct-HFc" customClass="PennyOverviewTableViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="JFX-ct-HFc" userLabel="Savings Target Overview Table View Controller" customClass="SavingsTargetOverviewTableViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" id="MRm-gc-Xkt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <segue destination="82D-9F-Hvt" kind="presentation" identifier="presentAddPotViewController" id="0Qw-4e-qaQ"/>
+                                        <segue destination="82D-9F-Hvt" kind="presentation" identifier="presentSavingsTargetViewController" id="0Qw-4e-qaQ"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -43,7 +43,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="56" selectionStyle="default" indentationWidth="10" reuseIdentifier="PennyOverviewCell" rowHeight="56" id="CRd-lR-bdA" customClass="PennyOverviewTableViewCell" customModule="WellySwift" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="56" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavingsTargetOverviewCell" rowHeight="56" id="CRd-lR-bdA" customClass="SavingsTargetOverviewTableViewCell" customModule="WellySwift" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="55" tableViewCell="CRd-lR-bdA" id="dwy-IB-dH7">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -110,7 +110,7 @@
         <!--Add New-->
         <scene sceneID="bN3-w7-lWh">
             <objects>
-                <viewController storyboardIdentifier="addPotViewController" title="Add New" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dQ1-XI-z82" customClass="AddPotViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addSavingsTargetViewController" title="Add New" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dQ1-XI-z82" customClass="AddSavingsTargetViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bD2-q1-hM3"/>
                         <viewControllerLayoutGuide type="bottom" id="5aI-b2-pMP"/>
