@@ -10,7 +10,6 @@
 		E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547157A19D65142000C3E0F /* AppDelegate.swift */; };
 		E547158319D65143000C3E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E547158119D65143000C3E0F /* Main.storyboard */; };
 		E547158519D65143000C3E0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E547158419D65143000C3E0F /* Images.xcassets */; };
-		E547159119D65143000C3E0F /* WellySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159019D65143000C3E0F /* WellySwiftTests.swift */; };
 		E547159D19D656CD000C3E0F /* PennyOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159C19D656CD000C3E0F /* PennyOverviewTableViewController.swift */; };
 		E54715A119D663AA000C3E0F /* PennyOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A019D663AA000C3E0F /* PennyOverviewTableViewCell.swift */; };
 		E54715A719D66BBD000C3E0F /* PennyPot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A619D66BBD000C3E0F /* PennyPot.swift */; };
@@ -18,25 +17,12 @@
 		E5C240BD19E2718000477453 /* AddPotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C240BC19E2718000477453 /* AddPotViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E547158B19D65143000C3E0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E547156D19D65142000C3E0F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E547157419D65142000C3E0F;
-			remoteInfo = WellySwift;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		E547157519D65142000C3E0F /* WellySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E547157919D65142000C3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E547157A19D65142000C3E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E547158219D65143000C3E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E547158419D65143000C3E0F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E547158A19D65143000C3E0F /* WellySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WellySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E547158F19D65143000C3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E547159019D65143000C3E0F /* WellySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellySwiftTests.swift; sourceTree = "<group>"; };
 		E547159C19D656CD000C3E0F /* PennyOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PennyOverviewTableViewController.swift; sourceTree = "<group>"; };
 		E54715A019D663AA000C3E0F /* PennyOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PennyOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		E54715A619D66BBD000C3E0F /* PennyPot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PennyPot.swift; sourceTree = "<group>"; };
@@ -52,13 +38,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E547158719D65143000C3E0F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -66,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				E547157719D65142000C3E0F /* WellySwift */,
-				E547158D19D65143000C3E0F /* WellySwiftTests */,
 				E547157619D65142000C3E0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				E547157519D65142000C3E0F /* WellySwift.app */,
-				E547158A19D65143000C3E0F /* WellySwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,23 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				E547157919D65142000C3E0F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E547158D19D65143000C3E0F /* WellySwiftTests */ = {
-			isa = PBXGroup;
-			children = (
-				E547159019D65143000C3E0F /* WellySwiftTests.swift */,
-				E547158E19D65143000C3E0F /* Supporting Files */,
-			);
-			path = WellySwiftTests;
-			sourceTree = "<group>";
-		};
-		E547158E19D65143000C3E0F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E547158F19D65143000C3E0F /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,24 +141,6 @@
 			productReference = E547157519D65142000C3E0F /* WellySwift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E547158919D65143000C3E0F /* WellySwiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E547159719D65143000C3E0F /* Build configuration list for PBXNativeTarget "WellySwiftTests" */;
-			buildPhases = (
-				E547158619D65143000C3E0F /* Sources */,
-				E547158719D65143000C3E0F /* Frameworks */,
-				E547158819D65143000C3E0F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E547158C19D65143000C3E0F /* PBXTargetDependency */,
-			);
-			name = WellySwiftTests;
-			productName = WellySwiftTests;
-			productReference = E547158A19D65143000C3E0F /* WellySwiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,10 +152,6 @@
 				TargetAttributes = {
 					E547157419D65142000C3E0F = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					E547158919D65143000C3E0F = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = E547157419D65142000C3E0F;
 					};
 				};
 			};
@@ -231,7 +169,6 @@
 			projectRoot = "";
 			targets = (
 				E547157419D65142000C3E0F /* WellySwift */,
-				E547158919D65143000C3E0F /* WellySwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,13 +180,6 @@
 			files = (
 				E547158319D65143000C3E0F /* Main.storyboard in Resources */,
 				E547158519D65143000C3E0F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E547158819D65143000C3E0F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,23 +199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E547158619D65143000C3E0F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E547159119D65143000C3E0F /* WellySwiftTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E547158C19D65143000C3E0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E547157419D65142000C3E0F /* WellySwift */;
-			targetProxy = E547158B19D65143000C3E0F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E547158119D65143000C3E0F /* Main.storyboard */ = {
@@ -398,40 +312,6 @@
 			};
 			name = Release;
 		};
-		E547159819D65143000C3E0F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WellySwift.app/WellySwift";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WellySwiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		E547159919D65143000C3E0F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WellySwift.app/WellySwift";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WellySwiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -449,15 +329,6 @@
 			buildConfigurations = (
 				E547159519D65143000C3E0F /* Debug */,
 				E547159619D65143000C3E0F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E547159719D65143000C3E0F /* Build configuration list for PBXNativeTarget "WellySwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E547159819D65143000C3E0F /* Debug */,
-				E547159919D65143000C3E0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
