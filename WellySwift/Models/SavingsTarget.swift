@@ -1,5 +1,5 @@
 //
-//  PennyPot.swift
+//  SavingsTarget.swift
 //  WellySwift
 //
 //  Created by Matt Nydam on 27/09/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PennyPot: NSObject {
+class SavingsTarget: NSObject {
 
     var goal:Int = 0
     var progress:Int = 0
@@ -28,9 +28,9 @@ class PennyPot: NSObject {
     }
     
     init(title:String!, goal:Int!) {
-        super.init()
         self.title = title
         self.goal = goal
+        super.init()
     }
 
     func getProgressWidth(maxWidth: CGFloat) -> CGFloat {
@@ -58,7 +58,7 @@ class PennyPot: NSObject {
         return percentageFraction
     }
     
-    // MARK - Serialization
+    // MARK: - Serialization
     
     // Used for NSUserDefaults
     func encodeWithCoder(aCoder: NSCoder!) {

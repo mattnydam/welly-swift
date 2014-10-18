@@ -1,5 +1,5 @@
 //
-//  AddPotViewController.swift
+//  AddSavingsTargetViewController.swift
 //  WellySwift
 //
 //  Created by Matt Nydam on 6/10/14.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-protocol AddPotViewControllerProtocol {
+protocol AddSavingsTargetViewControllerProtocol {
     
-    func addPotViewControllerDidDismissWithPennyPot(pennyPot: PennyPot);
-    func addPotViewControllerDidDismissWithObjectAndPosition(pennyPot: PennyPot, index: Int)
+    func addSavingsTargetViewControllerDidDismissWithSavingsTarget(target: SavingsTarget);
+    func addSavingsTargetViewControllerDidDismissWithObjectAndPosition(target: SavingsTarget, index: Int)
 }
 
-class AddPotViewController: UIViewController, UITextFieldDelegate {
+class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
 
-    var delegate:AddPotViewControllerProtocol?
+    var delegate:AddSavingsTargetViewControllerProtocol?
     
-    var shouldEditPennyPot = false
+    var shouldEditSavingsTarget = false
     var indexToAdd:Int?
-    var editablePennyPot:PennyPot?
+    var editableSavingsTarget:SavingsTarget?
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var goalTextField: UITextField!
@@ -31,19 +31,19 @@ class AddPotViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (editablePennyPot != nil) {
-            nameTextField.text = editablePennyPot!.title
-            goalTextField.text = String(editablePennyPot!.goal)
-            currentProgressTextField.text = String(editablePennyPot!.progress)
+        if (editableSavingsTarget != nil) {
+            nameTextField.text = editableSavingsTarget!.title
+            goalTextField.text = String(editableSavingsTarget!.goal)
+            currentProgressTextField.text = String(editableSavingsTarget!.progress)
         }
 
     }
     
     // MARK: - Configuration
     
-    func configureFormWithPennyPotAtIndex(currentPot:PennyPot, index: Int) {
-        editablePennyPot = currentPot
-        shouldEditPennyPot = true
+    func configureFormWithSavingsTarget(target:SavingsTarget, index: Int) {
+        editableSavingsTarget = target
+        shouldEditSavingsTarget = true
         indexToAdd = index
         
     }
@@ -59,15 +59,15 @@ class AddPotViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Object Creation
     
-    func createPennyPotObjectFromForm() -> PennyPot {
+    func createSavingsTargetFromForm() -> SavingsTarget {
         var newTitle = nameTextField.text
         var goal = goalTextField.text.toInt()
         var currentProgress = currentProgressTextField.text.toInt()
         
-        var newPennyPot:PennyPot! = PennyPot(title: newTitle, goal: goal)
-        newPennyPot.progress = currentProgress!
+        var newSavingsTarget:SavingsTarget! = SavingsTarget(title: newTitle, goal: goal)
+        newSavingsTarget.progress = currentProgress!
         
-        return newPennyPot
+        return newSavingsTarget
         
     }
     
@@ -105,12 +105,16 @@ class AddPotViewController: UIViewController, UITextFieldDelegate {
         // Let's send the objects back.
         if (delegate != nil ) {
 
-            editablePennyPot = createPennyPotObjectFromForm() // Get our new object from the form!
+            editableSavingsTarget = createSavingsTargetFromForm() // Get our new object from our form!
             
-            if (shouldEditPennyPot) { // We got here by tapping on a cell, so we are updating that object, not creating a new one
-                delegate?.addPotViewControllerDidDismissWithObjectAndPosition(editablePennyPot!, index: indexToAdd!)
+            if (shouldEditSavingsTarget) { // We got here by tapping on a cell, so we are updating that object, not creating a new one
+                
+                delegate?.addSavingsTargetViewControllerDidDismissWithObjectAndPosition(editableSavingsTarget!, index: indexToAdd!)
+                
             } else { // We got here via the add button. Which means we are creating a new object
-                delegate?.addPotViewControllerDidDismissWithPennyPot(editablePennyPot!)
+                
+                delegate?.addSavingsTargetViewControllerDidDismissWithSavingsTarget(editableSavingsTarget!)
+                
             }
         }
     }
