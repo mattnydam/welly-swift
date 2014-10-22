@@ -90,9 +90,9 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
         
         view.endEditing(true) // Make sure we hide the keyboard before we dismiss the current view.
         
-        let cancelButton:UIBarButtonItem? = sender as? UIBarButtonItem
+        let barButton:UIBarButtonItem? = sender as? UIBarButtonItem
         
-        if ((cancelButton) != nil) {
+        if (barButton?.tag == 0) {
             println("I was cancelled from the navigation bar")
             return
         }

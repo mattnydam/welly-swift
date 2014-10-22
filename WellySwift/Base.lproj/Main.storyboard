@@ -143,15 +143,6 @@
                                     <outlet property="delegate" destination="dzL-fc-bgr" id="vpL-2z-Uu8"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0m-CM-qej">
-                                <rect key="frame" x="550" y="285" width="34" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ReQ-Jo-Fvu" kind="unwind" unwindAction="unwindFromAdd:" id="UFL-BV-15e"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -160,9 +151,7 @@
                             <constraint firstItem="Gqr-ak-vO3" firstAttribute="top" secondItem="bD2-q1-hM3" secondAttribute="bottom" constant="53" id="Akk-US-XEq"/>
                             <constraint firstItem="Gmi-xC-Xvt" firstAttribute="top" secondItem="Gqr-ak-vO3" secondAttribute="bottom" constant="8" id="DVm-Kz-t3p"/>
                             <constraint firstItem="OhI-DA-fSw" firstAttribute="top" secondItem="Gmi-xC-Xvt" secondAttribute="bottom" constant="8" id="HEz-cY-HG9"/>
-                            <constraint firstItem="X0m-CM-qej" firstAttribute="trailing" secondItem="dzL-fc-bgr" secondAttribute="trailingMargin" id="IEd-Vy-M3b"/>
                             <constraint firstItem="Gmi-xC-Xvt" firstAttribute="top" secondItem="Gqr-ak-vO3" secondAttribute="bottom" constant="8" id="T5W-VF-NiJ"/>
-                            <constraint firstItem="5aI-b2-pMP" firstAttribute="top" secondItem="X0m-CM-qej" secondAttribute="bottom" constant="285" id="UAo-Gr-yXx"/>
                             <constraint firstItem="OhI-DA-fSw" firstAttribute="leading" secondItem="dzL-fc-bgr" secondAttribute="leadingMargin" id="YzF-2L-b2D"/>
                             <constraint firstItem="Gmi-xC-Xvt" firstAttribute="leading" secondItem="dzL-fc-bgr" secondAttribute="leadingMargin" id="c59-fG-kDS"/>
                             <constraint firstItem="Gmi-xC-Xvt" firstAttribute="trailing" secondItem="dzL-fc-bgr" secondAttribute="trailingMargin" id="eQ4-6N-8By"/>
@@ -171,9 +160,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aRt-V2-LiT">
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="fNc-ak-1KM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fNc-ak-1KM">
                             <connections>
                                 <segue destination="ReQ-Jo-Fvu" kind="unwind" unwindAction="unwindFromAdd:" id="BbV-yS-lEw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" systemItem="save" id="ReJ-T5-90N">
+                            <connections>
+                                <segue destination="ReQ-Jo-Fvu" kind="unwind" unwindAction="unwindFromAdd:" id="hRT-cs-75X"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
