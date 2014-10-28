@@ -22,7 +22,6 @@ class DataManager: NSObject {
     }
     
     override init() {
-        let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         super.init()
     }
     
@@ -32,28 +31,30 @@ class DataManager: NSObject {
         if ((savingsTargetToAdd) != nil) {
             allSavingsTargets?.append(savingsTargetToAdd!)
         }
-        saveCurrentObjectArrayToDefaults()
     }
     
-    func replaceSavingsTargetAtPosition(position: Int!, objectToAdd: SavingsTarget) {
-        allSavingsTargets[position] = objectToAdd
-        saveCurrentObjectArrayToDefaults()
+    func updateOrInsertSavingsTarget(objectToAdd: SavingsTarget) {
+        
+        for (var index:Int = 0; index < allSavingsTargets.count; index++) {
+            var target = allSavingsTargets[index]
+           
+            if  (target == objectToAdd) {
+                allSavingsTargets[index] = target
+                return
+            }
+            
+        }
+        // If it doesn't exist, let's add it.
+        addSavingsTarget(objectToAdd)
     }
     
     func removeSavingsTargetAtPosition(position: Int!) {
         allSavingsTargets.removeAtIndex(position)
-        saveCurrentObjectArrayToDefaults()
     }
     
     func savingsTargetAtPosition(position : Int!) -> SavingsTarget {
         var target:SavingsTarget! = allSavingsTargets[position]
         return target;
-    }
-    
-    // MARK - Saving Loading
-    
-    func saveCurrentObjectArrayToDefaults() {
-        
     }
     
 }

@@ -8,7 +8,7 @@
         <!--Savings Target Overview Table View Controller-->
         <scene sceneID="nXw-BZ-jM3">
             <objects>
-                <tableViewController id="JFX-ct-HFc" userLabel="Savings Target Overview Table View Controller" customClass="SavingsTargetOverviewTableViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="JFX-ct-HFc" userLabel="Savings Target Overview Table View Controller" customClass="OverviewTableViewController" customModule="WellySwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" id="MRm-gc-Xkt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

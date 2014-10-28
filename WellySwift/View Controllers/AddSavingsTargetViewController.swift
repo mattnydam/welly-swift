@@ -10,16 +10,13 @@ import UIKit
 
 protocol AddSavingsTargetViewControllerProtocol {
     
-    func addSavingsTargetViewControllerDidDismissWithSavingsTarget(target: SavingsTarget);
-    func addSavingsTargetViewControllerDidDismissWithObjectAndPosition(target: SavingsTarget, index: Int)
+    func addSavingsTargetViewControllerDidDismissWithSavingsTarget(target: SavingsTarget)
 }
 
 class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
 
     var delegate:AddSavingsTargetViewControllerProtocol?
     
-    var shouldEditSavingsTarget = false
-    var indexToAdd:Int?
     var editableSavingsTarget:SavingsTarget?
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -43,8 +40,6 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
     
     func configureFormWithSavingsTarget(target:SavingsTarget, index: Int) {
         editableSavingsTarget = target
-        shouldEditSavingsTarget = true
-        indexToAdd = index
         
     }
     
@@ -57,7 +52,13 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // MARK: - Object Creation
+    // MARK: - Object Creation/Update
+    
+    func updateSavingsTarget(target:SavingsTarget) {
+        target.title = nameTextField.text!
+        target.goal = goalTextField.text.toInt()!
+        target.progress = currentProgressTextField.text.toInt()!
+    }
     
     func createSavingsTargetFromForm() -> SavingsTarget {
         var newTitle = nameTextField.text
@@ -71,12 +72,13 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    // Make sure all of the fields are there! And that the current progress is less than or equal to the goal
     func allFormFieldsAreValid() -> Bool {
         var newTitle:String? = nameTextField.text
         var goal:Int? = goalTextField.text.toInt()
         var currentProgress:Int? = currentProgressTextField.text.toInt()
         
-        if (newTitle != nil && goal != nil && currentProgress != nil) {
+        if (newTitle != nil && goal != nil && currentProgress != nil && goal <= currentProgress) {
             return true
         } else {
             return false
@@ -92,30 +94,22 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
         
         let barButton:UIBarButtonItem? = sender as? UIBarButtonItem
         
-        if (barButton?.tag == 0) {
-            println("I was cancelled from the navigation bar")
-            return
-        }
-        
         if (!allFormFieldsAreValid()) {
-            println("Please fill out all the fields and make sure they are valid!") // Extra curricular - Validation
+            println("Please fill out all the fields and make sure they are valid!")
             return
         }
         
         // Let's send the objects back.
         if (delegate != nil ) {
 
-            editableSavingsTarget = createSavingsTargetFromForm() // Get our new object from our form!
-            
-            if (shouldEditSavingsTarget) { // We got here by tapping on a cell, so we are updating that object, not creating a new one
-                
-                delegate?.addSavingsTargetViewControllerDidDismissWithObjectAndPosition(editableSavingsTarget!, index: indexToAdd!)
-                
-            } else { // We got here via the add button. Which means we are creating a new object
-                
-                delegate?.addSavingsTargetViewControllerDidDismissWithSavingsTarget(editableSavingsTarget!)
-                
+            if (editableSavingsTarget == nil) {
+                editableSavingsTarget = createSavingsTargetFromForm() // Get our new object from our form!
+            } else {
+                updateSavingsTarget(editableSavingsTarget!)
             }
+            
+            delegate?.addSavingsTargetViewControllerDidDismissWithSavingsTarget(editableSavingsTarget!)
+            
         }
     }
 

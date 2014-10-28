@@ -8,8 +8,22 @@
 
 import UIKit
 
-class SavingsTarget: NSObject {
+// Woah. Operator override. Cool.
+func == (this:SavingsTarget, that: SavingsTarget) -> Bool {
+    
+    if (this.savingsTargetId == that.savingsTargetId && this.creationDate == that.creationDate) {
+        return true
+    }
+    
+    return false
+}
 
+class SavingsTarget: NSObject {
+    
+    // Equality Vars
+    var savingsTargetId:Int = 0
+    var creationDate:NSDate
+    
     var goal:Int = 0
     var progress:Int = 0
     var title:String = ""
@@ -30,7 +44,11 @@ class SavingsTarget: NSObject {
     init(title:String!, goal:Int!) {
         self.title = title
         self.goal = goal
+        self.savingsTargetId = Int(arc4random_uniform(3000))
+        self.creationDate = NSDate()
         super.init()
+
+        
     }
 
     func getProgressWidth(maxWidth: CGFloat) -> CGFloat {
@@ -57,19 +75,19 @@ class SavingsTarget: NSObject {
         
         return percentageFraction
     }
-    
+
     // MARK: - Serialization
     
-    // Used for NSUserDefaults
-    func encodeWithCoder(aCoder: NSCoder!) {
-        aCoder.encodeObject(self.title, forKey: "title")
-        aCoder.encodeObject(self.goal, forKey: "goal")
-        aCoder.encodeObject(self.progress, forKey: "progress")
-    }
-    
-    init(coder aDecoder: NSCoder!) {
-        self.title = aDecoder.decodeObjectForKey("title") as String
-        self.goal = aDecoder.decodeObjectForKey("goal") as Int
-        self.progress = aDecoder.decodeObjectForKey("progress") as Int
-    }
+//    // Used for NSUserDefaults
+//    func encodeWithCoder(aCoder: NSCoder!) {
+//        aCoder.encodeObject(self.title, forKey: "title")
+//        aCoder.encodeObject(self.goal, forKey: "goal")
+//        aCoder.encodeObject(self.progress, forKey: "progress")
+//    }
+//    
+//    init(coder aDecoder: NSCoder!) {
+//        self.title = aDecoder.decodeObjectForKey("title") as String
+//        self.goal = aDecoder.decodeObjectForKey("goal") as Int
+//        self.progress = aDecoder.decodeObjectForKey("progress") as Int
+//    }
 }

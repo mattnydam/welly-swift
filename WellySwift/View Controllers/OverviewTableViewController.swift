@@ -10,7 +10,7 @@ import UIKit
 
 let cellIdentifier:String = "SavingsTargetOverviewCell"
 
-class SavingsTargetOverviewTableViewController: UITableViewController, AddSavingsTargetViewControllerProtocol{
+class OverviewTableViewController: UITableViewController, AddSavingsTargetViewControllerProtocol{
     
     let savingsTargetsData:DataManager! = DataManager.sharedInstance
     
@@ -78,12 +78,7 @@ class SavingsTargetOverviewTableViewController: UITableViewController, AddSaving
     // MARK: - Add Savings Target view controller delegate
     
     func addSavingsTargetViewControllerDidDismissWithSavingsTarget(target: SavingsTarget) {
-        savingsTargetsData.addSavingsTarget(target)
-        tableView.reloadData()
-    }
-    
-    func addSavingsTargetViewControllerDidDismissWithObjectAndPosition(target: SavingsTarget, index: Int) {
-        savingsTargetsData.replaceSavingsTargetAtPosition(index, objectToAdd: target)
+        savingsTargetsData.updateOrInsertSavingsTarget(target)
         tableView.reloadData()
     }
     

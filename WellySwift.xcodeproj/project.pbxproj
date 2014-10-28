@@ -10,7 +10,7 @@
 		E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547157A19D65142000C3E0F /* AppDelegate.swift */; };
 		E547158319D65143000C3E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E547158119D65143000C3E0F /* Main.storyboard */; };
 		E547158519D65143000C3E0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E547158419D65143000C3E0F /* Images.xcassets */; };
-		E547159D19D656CD000C3E0F /* SavingsTargetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159C19D656CD000C3E0F /* SavingsTargetTableViewController.swift */; };
+		E547159D19D656CD000C3E0F /* OverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547159C19D656CD000C3E0F /* OverviewTableViewController.swift */; };
 		E54715A119D663AA000C3E0F /* SavingsTargetOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A019D663AA000C3E0F /* SavingsTargetOverviewTableViewCell.swift */; };
 		E54715A719D66BBD000C3E0F /* SavingsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A619D66BBD000C3E0F /* SavingsTarget.swift */; };
 		E54715A919D66BC7000C3E0F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54715A819D66BC7000C3E0F /* DataManager.swift */; };
@@ -23,7 +23,7 @@
 		E547157A19D65142000C3E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E547158219D65143000C3E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E547158419D65143000C3E0F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E547159C19D656CD000C3E0F /* SavingsTargetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingsTargetTableViewController.swift; sourceTree = "<group>"; };
+		E547159C19D656CD000C3E0F /* OverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewTableViewController.swift; sourceTree = "<group>"; };
 		E54715A019D663AA000C3E0F /* SavingsTargetOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingsTargetOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		E54715A619D66BBD000C3E0F /* SavingsTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingsTarget.swift; sourceTree = "<group>"; };
 		E54715A819D66BC7000C3E0F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		E547159A19D65655000C3E0F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E547159C19D656CD000C3E0F /* SavingsTargetTableViewController.swift */,
+				E547159C19D656CD000C3E0F /* OverviewTableViewController.swift */,
 				E5C240BC19E2718000477453 /* AddSavingsTargetViewController.swift */,
 			);
 			path = "View Controllers";
@@ -205,7 +205,7 @@
 				E54715A919D66BC7000C3E0F /* DataManager.swift in Sources */,
 				E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */,
 				E54715A719D66BBD000C3E0F /* SavingsTarget.swift in Sources */,
-				E547159D19D656CD000C3E0F /* SavingsTargetTableViewController.swift in Sources */,
+				E547159D19D656CD000C3E0F /* OverviewTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
