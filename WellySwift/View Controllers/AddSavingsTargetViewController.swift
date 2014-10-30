@@ -19,9 +19,9 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
     
     var editableSavingsTarget:SavingsTarget?
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var goalTextField: UITextField!
-    @IBOutlet weak var currentProgressTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var savingsGoalTextField: UITextField!
+    @IBOutlet weak var currentSavingsProgressTextField: UITextField!
     
     // MARK: - Lifecycle
     
@@ -29,24 +29,22 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         if (editableSavingsTarget != nil) {
-            nameTextField.text = editableSavingsTarget!.title
-            goalTextField.text = String(editableSavingsTarget!.goal)
-            currentProgressTextField.text = String(editableSavingsTarget!.progress)
+            titleTextField.text = editableSavingsTarget!.title
+            savingsGoalTextField.text = String(editableSavingsTarget!.goal)
+            currentSavingsProgressTextField.text = String(editableSavingsTarget!.progress)
         }
 
     }
     
     // MARK: - Configuration
-    
     func configureFormWithSavingsTarget(target:SavingsTarget, index: Int) {
         editableSavingsTarget = target
-        
     }
     
     // MARK: - Text field Delegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if (textField == currentProgressTextField) {
+        if (textField == currentSavingsProgressTextField) {
             println("Current")
         }
         return true
@@ -55,15 +53,15 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Object Creation/Update
     
     func updateSavingsTarget(target:SavingsTarget) {
-        target.title = nameTextField.text!
-        target.goal = goalTextField.text.toInt()!
-        target.progress = currentProgressTextField.text.toInt()!
+        target.title = titleTextField.text!
+        target.goal = savingsGoalTextField.text.toInt()!
+        target.progress = currentSavingsProgressTextField.text.toInt()!
     }
     
     func createSavingsTargetFromForm() -> SavingsTarget {
-        var newTitle = nameTextField.text
-        var goal = goalTextField.text.toInt()
-        var currentProgress = currentProgressTextField.text.toInt()
+        var newTitle = titleTextField.text
+        var goal = savingsGoalTextField.text.toInt()
+        var currentProgress = currentSavingsProgressTextField.text.toInt()
         
         var newSavingsTarget:SavingsTarget! = SavingsTarget(title: newTitle, goal: goal)
         newSavingsTarget.progress = currentProgress!
@@ -74,11 +72,11 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
     
     // Make sure all of the fields are there! And that the current progress is less than or equal to the goal
     func allFormFieldsAreValid() -> Bool {
-        var newTitle:String? = nameTextField.text
-        var goal:Int? = goalTextField.text.toInt()
-        var currentProgress:Int? = currentProgressTextField.text.toInt()
+        var newTitle:String? = titleTextField.text
+        var goal:Int? = savingsGoalTextField.text.toInt()
+        var currentProgress:Int? = currentSavingsProgressTextField.text.toInt()
         
-        if (newTitle != nil && goal != nil && currentProgress != nil && goal <= currentProgress) {
+        if (newTitle != nil && goal != nil && currentProgress != nil) {
             return true
         } else {
             return false
@@ -100,17 +98,15 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
         }
         
         // Let's send the objects back.
-        if (delegate != nil ) {
-
-            if (editableSavingsTarget == nil) {
-                editableSavingsTarget = createSavingsTargetFromForm() // Get our new object from our form!
-            } else {
-                updateSavingsTarget(editableSavingsTarget!)
-            }
-            
-            delegate?.addSavingsTargetViewControllerDidDismissWithSavingsTarget(editableSavingsTarget!)
-            
+        if (editableSavingsTarget == nil) {
+            editableSavingsTarget = createSavingsTargetFromForm() // Get our new object from our form!
+        } else {
+            updateSavingsTarget(editableSavingsTarget!)
         }
+        
+        delegate?.addSavingsTargetViewControllerDidDismissWithSavingsTarget(editableSavingsTarget!)
+        
+        
     }
 
 }

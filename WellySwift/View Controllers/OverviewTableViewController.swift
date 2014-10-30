@@ -8,8 +8,6 @@
 
 import UIKit
 
-let cellIdentifier:String = "SavingsTargetOverviewCell"
-
 class OverviewTableViewController: UITableViewController, AddSavingsTargetViewControllerProtocol{
     
     let savingsTargetsData:DataManager! = DataManager.sharedInstance
@@ -35,7 +33,7 @@ class OverviewTableViewController: UITableViewController, AddSavingsTargetViewCo
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as SavingsTargetOverviewTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("overviewTableViewCell", forIndexPath: indexPath) as OverviewTableViewCell
         cell.configureWithSavingsTarget(savingsTargetsData.savingsTargetAtPosition(indexPath.row))
     
         return cell
@@ -84,7 +82,7 @@ class OverviewTableViewController: UITableViewController, AddSavingsTargetViewCo
     
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "presentSavingsTargetViewController"{
+        if segue.identifier == "addSavingsTargetSegue"{
             let addSavingsViewController = segue.destinationViewController.topViewController as AddSavingsTargetViewController
             addSavingsViewController.delegate = self
         }

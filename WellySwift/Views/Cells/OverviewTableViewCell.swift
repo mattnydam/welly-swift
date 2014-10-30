@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SavingsTargetOverviewTableViewCell: UITableViewCell {
+class OverviewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
