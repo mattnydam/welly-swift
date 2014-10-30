@@ -90,8 +90,5 @@ class OverviewTableViewController: UITableViewController, AddSavingsTargetViewCo
 
     // Unwind from our modal view controller!
     @IBAction func unwindFromAdd(segue: UIStoryboardSegue) {
-        
-        segue.sourceViewController.dismissViewControllerAnimated(true, completion: { () -> Void in
-            })
     }
 }
