@@ -10,7 +10,6 @@ import UIKit
 
 class DataManager: NSObject {
     
-    let userDefaultsKey:String! = "storedSavingsTargetArray"
     
     var allSavingsTargets:Array<SavingsTarget>! = Array<SavingsTarget>()
     
@@ -23,6 +22,13 @@ class DataManager: NSObject {
     
     override init() {
         super.init()
+        var targetOne:SavingsTarget = SavingsTarget(title: "New York Trip", goal: 9000)
+        targetOne.progress = 5000
+        var targetTwo:SavingsTarget = SavingsTarget(title: "Ski Trip", goal: 1000)
+        targetTwo.progress = 430
+        
+        allSavingsTargets.append(targetOne)
+        allSavingsTargets.append(targetTwo)
     }
     
     // MARK - Add, Remove, Retrieve, Replace
