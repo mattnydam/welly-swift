@@ -33,7 +33,7 @@ class OverviewTableViewController: UITableViewController, AddSavingsTargetViewCo
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCellWithIdentifier("overviewTableViewCell", forIndexPath: indexPath) as OverviewTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("overviewTableViewCell", forIndexPath: indexPath) as! OverviewTableViewCell
         cell.configureWithSavingsTarget(savingsTargetsData.savingsTargetAtPosition(indexPath.row))
     
         return cell
@@ -60,7 +60,7 @@ class OverviewTableViewController: UITableViewController, AddSavingsTargetViewCo
         
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let editSavingsTargetViewController:AddSavingsTargetViewController = mainStoryboard.instantiateViewControllerWithIdentifier("addSavingsTargetViewController")
-         as AddSavingsTargetViewController
+         as! AddSavingsTargetViewController
         
         let editNavigation:UINavigationController = UINavigationController(rootViewController: editSavingsTargetViewController)
         
@@ -82,8 +82,9 @@ class OverviewTableViewController: UITableViewController, AddSavingsTargetViewCo
     
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "addSavingsTargetSegue"{
-            let addSavingsViewController = segue.destinationViewController.topViewController as AddSavingsTargetViewController
+        if segue.identifier == "addSavingsTargetSegue" {
+
+            let addSavingsViewController:AddSavingsTargetViewController = (segue.destinationViewController as! UINavigationController).topViewController as! AddSavingsTargetViewController
             addSavingsViewController.delegate = self
         }
     }

@@ -22,9 +22,9 @@ class DataManager: NSObject {
     
     override init() {
         super.init()
-        var targetOne:SavingsTarget = SavingsTarget(title: "New York Trip", goal: 9000)
+        let targetOne:SavingsTarget = SavingsTarget(title: "New York Trip", goal: 9000)
         targetOne.progress = 5000
-        var targetTwo:SavingsTarget = SavingsTarget(title: "Ski Trip", goal: 1000)
+        let targetTwo:SavingsTarget = SavingsTarget(title: "Ski Trip", goal: 1000)
         targetTwo.progress = 430
         
         allSavingsTargets.append(targetOne)
@@ -42,7 +42,7 @@ class DataManager: NSObject {
     func updateOrInsertSavingsTarget(objectToAdd: SavingsTarget) {
         
         for (var index:Int = 0; index < allSavingsTargets.count; index++) {
-            var target = allSavingsTargets[index]
+            let target = allSavingsTargets[index]
            
             if  (target == objectToAdd) {
                 allSavingsTargets[index] = target
@@ -59,7 +59,7 @@ class DataManager: NSObject {
     }
     
     func savingsTargetAtPosition(position : Int!) -> SavingsTarget {
-        var target:SavingsTarget! = allSavingsTargets[position]
+        let target:SavingsTarget! = allSavingsTargets[position]
         return target;
     }
     

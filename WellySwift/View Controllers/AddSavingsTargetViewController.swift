@@ -45,7 +45,7 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if (textField == currentSavingsProgressTextField) {
-            println("Current")
+            print("Current")
         }
         return true
     }
@@ -54,16 +54,16 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
     
     func updateSavingsTarget(target:SavingsTarget) {
         target.title = titleTextField.text!
-        target.goal = savingsGoalTextField.text.toInt()!
-        target.progress = currentSavingsProgressTextField.text.toInt()!
+        target.goal = Int(savingsGoalTextField.text!)
+        target.progress = Int(currentSavingsProgressTextField.text!)
     }
     
     func createSavingsTargetFromForm() -> SavingsTarget {
-        var newTitle = titleTextField.text
-        var goal = savingsGoalTextField.text.toInt()
-        var currentProgress = currentSavingsProgressTextField.text.toInt()
+        let newTitle = titleTextField.text
+        let goal = Int(savingsGoalTextField.text!)
+        let currentProgress = Int(currentSavingsProgressTextField.text!)
         
-        var newSavingsTarget:SavingsTarget! = SavingsTarget(title: newTitle, goal: goal)
+        let newSavingsTarget:SavingsTarget! = SavingsTarget(title: newTitle, goal: goal)
         newSavingsTarget.progress = currentProgress!
         
         return newSavingsTarget
@@ -72,9 +72,9 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
     
     // Make sure all of the fields are there! And that the current progress is less than or equal to the goal
     func allFormFieldsAreValid() -> Bool {
-        var newTitle:String? = titleTextField.text
-        var goal:Int? = savingsGoalTextField.text.toInt()
-        var currentProgress:Int? = currentSavingsProgressTextField.text.toInt()
+        let newTitle:String? = titleTextField.text
+        let goal:Int? = Int(savingsGoalTextField.text!)
+        let currentProgress:Int? = Int(currentSavingsProgressTextField.text!)
         
         if (newTitle != nil && goal != nil && currentProgress != nil) {
             return true
@@ -90,10 +90,8 @@ class AddSavingsTargetViewController: UIViewController, UITextFieldDelegate {
         
         view.endEditing(true) // Make sure we hide the keyboard before we dismiss the current view.
         
-        let barButton:UIBarButtonItem? = sender as? UIBarButtonItem
-        
         if (!allFormFieldsAreValid()) {
-            println("Please fill out all the fields and make sure they are valid!")
+            print("Please fill out all the fields and make sure they are valid!")
             return
         }
         

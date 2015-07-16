@@ -21,12 +21,12 @@ func == (this:SavingsTarget, that: SavingsTarget) -> Bool {
 class SavingsTarget: NSObject {
     
     // Equality Vars
-    var savingsTargetId:Int = 0
-    var creationDate:NSDate
+    let savingsTargetId: Int!
+    let creationDate: NSDate!
     
-    var goal:Int = 0
-    var progress:Int = 0
-    var title:String = ""
+    var goal: Int! = 0
+    var progress: Int! = 0
+    var title: String! = ""
     
     var currentPercent:CGFloat  {
       
@@ -35,7 +35,7 @@ class SavingsTarget: NSObject {
             if((progress > goal) || (goal < 0) || (progress <= 0)) {
                 return 0
             }
-            var currentPercent = CGFloat((CGFloat(progress)/CGFloat(goal)) * 100.0)
+            let currentPercent = CGFloat((CGFloat(progress)/CGFloat(goal)) * 100.0)
             
             return currentPercent
         }
@@ -71,23 +71,8 @@ class SavingsTarget: NSObject {
             return 0
         }
         
-        var percentageFraction = maxWidth * (percent/100.0)
+        let percentageFraction = maxWidth * (percent/100.0)
         
         return percentageFraction
     }
-
-    // MARK: - Serialization
-    
-//    // Used for NSUserDefaults
-//    func encodeWithCoder(aCoder: NSCoder!) {
-//        aCoder.encodeObject(self.title, forKey: "title")
-//        aCoder.encodeObject(self.goal, forKey: "goal")
-//        aCoder.encodeObject(self.progress, forKey: "progress")
-//    }
-//    
-//    init(coder aDecoder: NSCoder!) {
-//        self.title = aDecoder.decodeObjectForKey("title") as String
-//        self.goal = aDecoder.decodeObjectForKey("goal") as Int
-//        self.progress = aDecoder.decodeObjectForKey("progress") as Int
-//    }
 }

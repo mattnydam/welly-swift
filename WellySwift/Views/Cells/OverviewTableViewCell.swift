@@ -17,18 +17,18 @@ class OverviewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
 
-    var progressWidth:CGFloat = 0.0
     var currentTarget:SavingsTarget!
+    var progressWidth:CGFloat = 0.0
         
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+//    required init(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
     
     override func awakeFromNib() {
 
         super.awakeFromNib()
         
-        var progressBarHeight = progressBar.frame.size.height
+        let progressBarHeight = progressBar.frame.size.height
         currentProgressBar.layer.cornerRadius = progressBarHeight/2
         progressBar.layer.cornerRadius = progressBarHeight/2
     }
@@ -50,11 +50,11 @@ class OverviewTableViewCell: UITableViewCell {
     
     override func updateConstraints() {
 
-        var maxWidth:CGFloat! = contentView.bounds.size.width - 40 // 40 includes our two edge insets. Let's change
-        
-        var savingsGoalProgressWidth:CGFloat! = currentTarget.getProgressWidth(maxWidth) // Let's get the width of progress based on our max width
-
-        progressBarWidthConstraint.constant = savingsGoalProgressWidth // Set the width of our constraint. This will reflect in the UI! Cool!
+        if (currentTarget != nil) {
+            let maxWidth:CGFloat! = contentView.bounds.size.width - 40 // 40 includes our two edge insets. Let's change
+            let savingsGoalProgressWidth = currentTarget!.getProgressWidth(maxWidth) // Let's get the width of progress based on our max width
+            progressBarWidthConstraint.constant = savingsGoalProgressWidth // Set the width of our constraint. This will reflect in the UI! Cool!
+        }
         
         super.updateConstraints()
     }

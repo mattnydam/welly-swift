@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BDC6FBC31B575DE8000396CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC6FBC21B575DE8000396CB /* LaunchScreen.storyboard */; };
 		E547157B19D65142000C3E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547157A19D65142000C3E0F /* AppDelegate.swift */; };
 		E547158319D65143000C3E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E547158119D65143000C3E0F /* Main.storyboard */; };
 		E547158519D65143000C3E0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E547158419D65143000C3E0F /* Images.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BDC6FBC21B575DE8000396CB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E547157519D65142000C3E0F /* WellySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E547157919D65142000C3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E547157A19D65142000C3E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				E547158119D65143000C3E0F /* Main.storyboard */,
 				E547158419D65143000C3E0F /* Images.xcassets */,
 				E547157819D65142000C3E0F /* Supporting Files */,
+				BDC6FBC21B575DE8000396CB /* LaunchScreen.storyboard */,
 			);
 			path = WellySwift;
 			sourceTree = "<group>";
@@ -157,7 +160,9 @@
 		E547156D19D65142000C3E0F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = WellyHack;
 				TargetAttributes = {
 					E547157419D65142000C3E0F = {
@@ -188,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC6FBC31B575DE8000396CB /* LaunchScreen.storyboard in Resources */,
 				E547158319D65143000C3E0F /* Main.storyboard in Resources */,
 				E547158519D65143000C3E0F /* Images.xcassets in Resources */,
 			);
@@ -243,6 +249,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -304,9 +311,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WellySwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wellyhack.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -315,9 +322,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WellySwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wellyhack.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
