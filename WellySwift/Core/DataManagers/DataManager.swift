@@ -10,10 +10,9 @@ import UIKit
 
 class DataManager: NSObject {
     
-    
     var allSavingsTargets:Array<SavingsTarget>! = Array<SavingsTarget>()
     
-    class var sharedInstance : DataManager {
+    class var sharedInstance: DataManager {
         struct Static {
             static let instance : DataManager = DataManager()
         }
